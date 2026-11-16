@@ -111,7 +111,7 @@ class Task:
         if self.context.strip():
             lines += ["", self.context.strip()]
         lines += ["", "Options:"]
-        for letter, idx in zip(LETTERS, order):
+        for letter, idx in zip(LETTERS, order, strict=False):
             lines.append(f"{letter}. {opts[idx].description}")
             letter_to_key[letter] = opts[idx].key
         lines += ["", self.answer_instruction, "Answer:"]

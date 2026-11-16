@@ -92,7 +92,7 @@ pip install anyjev            # once it is published to PyPI
 pip install git+https://github.com/ubairnisar/anyjev
 ```
 
-Requires Python 3.9 or later. The only runtime dependencies are `openai` and `pyyaml`.
+Requires Python 3.10 or later. The only runtime dependencies are `openai` and `pyyaml`.
 Install `anyjev[pil]` to pass PIL images.
 
 ## 1. Serve a model with vLLM

@@ -7,7 +7,7 @@ name = "anyjev"
 version = "0.1.0"
 description = "Logprob-scored LLM judgements (classify, grade, route) on any model served by vLLM."
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 license = "Apache-2.0"
 keywords = ["llm", "vllm", "logprobs", "classification", "llm-as-judge", "vision-language-model"]
 classifiers = [
@@ -37,7 +37,7 @@ packages = ["src/anyjev"]
 
 [tool.ruff]
 line-length = 120
-target-version = "py39"
+target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "B"]

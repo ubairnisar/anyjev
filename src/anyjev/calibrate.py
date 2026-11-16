@@ -44,8 +44,8 @@ class Calibration:
 
 
 def _metrics(scores: Sequence[float], truth: Sequence[bool], thr: float) -> Point:
-    tp = sum(1 for s, t in zip(scores, truth) if t and s >= thr)
-    fp = sum(1 for s, t in zip(scores, truth) if not t and s >= thr)
+    tp = sum(1 for s, t in zip(scores, truth, strict=True) if t and s >= thr)
+    fp = sum(1 for s, t in zip(scores, truth, strict=True) if not t and s >= thr)
     pos = sum(truth)
     neg = len(truth) - pos
     return Point(
@@ -67,7 +67,7 @@ def calibrate_threshold(
         raise ValueError("scores and truth must have the same length.")
     if not 0.0 < target_recall <= 1.0:
         raise ValueError("target_recall must be in (0, 1].")
-    positives = sorted(s for s, t in zip(scores, truth) if t)
+    positives = sorted(s for s, t in zip(scores, truth, strict=True) if t)
     if not positives:
         raise ValueError("Calibration needs at least one positive example.")
 
