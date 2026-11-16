@@ -6,7 +6,7 @@ with anyjev easier, or the results more trustworthy?
 ## Setup
 
 ```bash
-git clone https://github.com/anyjev/anyjev && cd anyjev
+git clone https://github.com/ubairnisar/anyjev && cd anyjev
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 pytest -q

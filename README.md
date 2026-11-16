@@ -89,7 +89,7 @@ image/text ─▶│ question + context + "A. option 1 / B. option 2 / …" + "A
 ```bash
 pip install anyjev            # once it is published to PyPI
 # or from source:
-pip install git+https://github.com/anyjev/anyjev
+pip install git+https://github.com/ubairnisar/anyjev
 ```
 
 Requires Python 3.9 or later. The only runtime dependencies are `openai` and `pyyaml`.
