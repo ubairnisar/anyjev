@@ -87,13 +87,15 @@ image/text ─▶│ question + context + "A. option 1 / B. option 2 / …" + "A
 ## Install
 
 ```bash
-pip install anyjev            # once it is published to PyPI
-# or from source:
 pip install git+https://github.com/ubairnisar/anyjev
 ```
 
 Requires Python 3.10 or later. The only runtime dependencies are `openai` and `pyyaml`.
-Install `anyjev[pil]` to pass PIL images.
+To pass PIL images, install the `pil` extra:
+
+```bash
+pip install "anyjev[pil] @ git+https://github.com/ubairnisar/anyjev"
+```
 
 ## 1. Serve a model with vLLM
 
