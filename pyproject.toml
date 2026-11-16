@@ -1,0 +1,47 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "anyjev"
+version = "0.1.0"
+description = "Logprob-scored LLM judgements (classify, grade, route) on any model served by vLLM."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+keywords = ["llm", "vllm", "logprobs", "classification", "llm-as-judge", "vision-language-model"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: Apache Software License",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Typing :: Typed",
+]
+dependencies = [
+  "openai>=1.40",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+pil = ["pillow>=10"]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "ruff>=0.5"]
+
+[project.scripts]
+anyjev = "anyjev.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/anyjev/anyjev"
+Issues = "https://github.com/anyjev/anyjev/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/anyjev"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = ["E741"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

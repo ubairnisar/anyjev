@@ -1,0 +1,12 @@
+name: answer-grader
+system: You are a strict grader.
+question: |
+  The input has a question, a reference answer and a student answer.
+  Grade the student answer.
+options:
+  - key: full
+    description: Fully correct
+  - key: partial
+    description: Partially correct - right idea, missing or wrong details
+  - key: wrong
+    description: Wrong or off-topic

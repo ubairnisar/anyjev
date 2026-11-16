@@ -1,0 +1,28 @@
+name: structured-vs-prose
+question: Analyse the text-block image and decide whether it contains any STRUCTURED
+  content, or is PURE PROSE.
+context: "DEFINITIONS\n\nSTRUCTURED content is present when the crop contains one\
+  \ or more of:\n  * Key-value pairs - a label paired with a field/value (e.g. \"\
+  Name: John Doe\",\n    a label next to a box/line/dropdown/chip).\n  * Checkboxes\
+  \ or radio buttons before or after a phrase - any selectable\n    indicator, such\
+  \ as a box or circle that may be checked, filled, marked,\n    selected, or not.\
+  \ IMPORTANT NOTE: Due to cropping, these indicators may\n    appear incomplete or\
+  \ partially visible, but if any part of a\n    checkbox/radio button is present,\
+  \ it counts as structured content.\n  * Signature fields - a signature line or box,\
+  \ signed or blank.\n  * Ordered lists - items preceded by incrementing numeric/alphanumeric\n\
+  \    markers (1., 2., i., ii., A., B., ...).\n  * Unordered lists - items preceded\
+  \ by bullet markers (-, *, bullet dots, ...).\n  * Image, Symbol, Icon - if the\
+  \ crop contains any non-text visual element\n    (image fragment, icon, decorative\
+  \ graphic, rectangle or marker), it counts\n    as structured content. Ignore the\
+  \ content of the image; just note its\n    presence.\n\nPURE PROSE is when the crop\
+  \ has:\n  * Only paragraphs, sentences, phrases, or standalone headings/subheadings.\n\
+  \  * No labeled fields, no boxes/lines to fill in, no checkboxes/radios, no\n  \
+  \  signature areas, no bulleted/numbered list markers.\n\nWhen in doubt, choose\
+  \ STRUCTURED (safer to run full extraction than to lose\nstructured data)."
+options:
+- key: structured
+  description: STRUCTURED - the crop contains any structured content as defined above
+- key: prose
+  description: PURE PROSE - only paragraphs, sentences, phrases or standalone headings
+positive: structured
+threshold: 0.3
